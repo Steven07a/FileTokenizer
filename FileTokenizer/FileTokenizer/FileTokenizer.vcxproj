@@ -147,7 +147,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\includes\table.cpp" />
+    <ClCompile Include="..\..\..\stringTokenizer\StringTokenizer\STokenizer.cpp" />
+    <ClCompile Include="..\..\..\stringTokenizer\StringTokenizer\token.cpp" />
     <ClCompile Include="FileTokenizer.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\includes\table.h" />
+    <ClInclude Include="..\..\..\stringTokenizer\StringTokenizer\STokenizer.h" />
+    <ClInclude Include="..\..\..\stringTokenizer\StringTokenizer\token.h" />
+    <ClInclude Include="FileTokenizer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\Downloads\solitude.txt" />
+    <Text Include="solitude.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
