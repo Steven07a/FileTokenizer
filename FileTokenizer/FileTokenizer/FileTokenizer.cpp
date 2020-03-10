@@ -2,7 +2,6 @@
 
 FTokenizer::FTokenizer(char* fname) {
 	_f.open(fname);
-	_f.is_open();
 	_pos = 0;
 	_blockPos = 0;
 	_more = false;
@@ -22,23 +21,29 @@ int FTokenizer::block_pos() {
 
 bool FTokenizer::get_new_block() {
 	char* text = new char[MAX_BLOCK];
-	if (_f.is_open()) {
+	if (!_f.eof()) {
 		_pos += MAX_BLOCK;
 		_f.read(text, MAX_BLOCK-1);
-		text[MAX_BLOCK - 1] = '\0';
+		text[_f.gcount()] = '\0';
 		_blockPos = _pos - MAX_BLOCK;
+		this->_stk.set_string(text);
+		_more = true;
 		return true;
 	} else {
+		_more = false;
 		return false;
 	}
 }
 
 FTokenizer& operator >> (FTokenizer& f, Token& t) {
-	string temp = "";
-	while (temp.empty() && f.get_new_block()) {
-		f._stk >> t;
-		temp = t.token_str();
+	if (f._blockPos == f._pos) {
+		f.get_new_block();
 	}
+	string temp = "";
+	f._stk >> t;
+	temp = t.token_str();
+	f._blockPos += temp.length();
+
 	return f;
 }
 

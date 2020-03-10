@@ -31,6 +31,7 @@ void test_f_tokenize_simple() {
                 << setw(3) << left << ":" << setw(25) << left << t.token_str()
                 << t.type_string() << endl;
         }
+        t = Token();
         ftk >> t;
     }
     cout << "Tokens Found: " << token_count << endl;
