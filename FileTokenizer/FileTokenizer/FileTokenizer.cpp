@@ -25,7 +25,6 @@ bool FTokenizer::get_new_block() {
 		_pos += MAX_BLOCK;
 		_f.read(text, MAX_BLOCK-1);
 		text[_f.gcount()] = '\0';
-		_blockPos = _pos - MAX_BLOCK;
 		this->_stk.set_string(text);
 		_more = true;
 		return true;
