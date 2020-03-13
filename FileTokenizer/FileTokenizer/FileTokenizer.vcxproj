@@ -158,6 +158,8 @@
     <ClInclude Include="..\..\..\stringTokenizer\StringTokenizer\STokenizer.h" />
     <ClInclude Include="..\..\..\stringTokenizer\StringTokenizer\token.h" />
     <ClInclude Include="FileTokenizer.h" />
+    <ClInclude Include="Z_OUTPUT.h" />
+    <ClInclude Include="Z_Work_Report.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\..\..\Downloads\solitude.txt" />

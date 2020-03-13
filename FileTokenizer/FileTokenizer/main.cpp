@@ -1,5 +1,11 @@
-// FileTokenizer.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+ * Author: Steven Herrera
+ * Project: File Tokenizer
+ * Purpose: It's suppposed to enter a file then Tokenizer everything inside.
+ *            Afterwards it should only print out the Alpha characters 
+ * Notes: This can also take in words like Cat's as one word
+ *
+ */
 
 #include <iostream>
 #include <iomanip>
